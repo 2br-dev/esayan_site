@@ -22,7 +22,7 @@
 
                                                                               {if $product.reservation == 'forced'} rs-forced-reserve{/if}" data-id="{$product.id}">
     <div class="global-wrapper" id="product">
-        <section class="{$product['theme_color']}">
+        <section class="{$product['theme_color']} {if $product['dark_ico']}light{/if}">
             <div class="container">
                 <div class="row">
                     <div class="col s12">
@@ -35,21 +35,69 @@
                         <div class="params">
                             {if $product['armored_milk']}
                                 <div class="param">
-                                    <div class="lazy" data-src="{$THEME_IMG}/milk.svg">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/milk.svg">
                                     </div>
                                     <span>Сгущеное молоко</span>
                                 </div>
                             {/if}
                             {if $product['walnut']}
                                 <div class="param">
-                                    <div class="lazy" data-src="{$THEME_IMG}/greek_nut.svg"></div>
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/nut.svg"></div>
                                     <span>Грецкий орех</span>
                                 </div>
                             {/if}
                             {if $product['honey']}
                                 <div class="param">
-                                    <div class="lazy" data-src="{$THEME_IMG}/honey.svg"></div>
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/honey.svg"></div>
                                     <span>Натуральный мёд</span>
+                                </div>
+                            {/if}
+                            {if $product['butter']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/butter.svg"></div>
+                                    <span>Сливочное масло</span>
+                                </div>
+                            {/if}
+                            {if $product['chocolate']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/choco.svg"></div>
+                                    <span>Натуральный шоколад</span>
+                                </div>
+                            {/if}
+                            {if $product['peanut']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/arahis.svg"></div>
+                                    <span>Обжаренный арахис</span>
+                                </div>
+                            {/if}
+                            {if $product['poppy']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/poppy.svg"></div>
+                                    <span>Кондитерский мак</span>
+                                </div>
+                            {/if}
+                            {if $product['sour_cream']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/curd.svg"></div>
+                                    <span>Домашняя сметана</span>
+                                </div>
+                            {/if}
+                            {if $product['cream']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/slivki.svg"></div>
+                                    <span>Натуральный сливки</span>
+                                </div>
+                            {/if}
+                            {if $product['curd']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/curd.svg"></div>
+                                    <span>Творожная начинка</span>
+                                </div>
+                            {/if}
+                            {if $product['cocoa']}
+                                <div class="param">
+                                    <div class="lazy" data-src="{$THEME_IMG}/icons/{if $product['dark_ico']}dark{else}light{/if}/cacao.svg"></div>
+                                    <span>Натуральное какао</span>
                                 </div>
                             {/if}
                         </div>
@@ -129,6 +177,16 @@
                                         </div>
                                     {/if}
                                 {/foreach}
+                            {else}
+                                <div class="char">
+                                    <div class="header">{$product->getCost()|replace:' ':''|intval/$product['count_in_box']|intval}₽/{$product['one_weight']}г</div>
+                                    <div class="content">
+                                        <ul>
+                                            <li>{$product['count_in_box']} упаковок в коробке</li>
+                                            <li>{$product['count_in_pallet']} коробок в&nbsp;паллете</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             {/if}
                         </div>
                     </div>

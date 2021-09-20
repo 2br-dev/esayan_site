@@ -1,4 +1,10 @@
-<header {if $smarty.server.REQUEST_URI == ''}class="hero" {else}class="static"{/if}>
+{if $router->getCurrentRoute()->getId() == 'catalog-front-product'}
+    {$product = $router->getCurrentRoute()->getExtra('product')}
+    <header class="hero {if $product['dark_ico']}light{/if}">
+{else}
+    <header {if $smarty.server.REQUEST_URI == ''}class="hero" {else}class="static"{/if}>
+{/if}
+
     <nav class="container">
         <div class="logo-wrapper">
             <a href="/" class="logo">&nbsp;</a>
@@ -8,13 +14,13 @@
                 <a>Продукция</a>
                 <ul>
                     <li><a class="tabs-href" href="/catalog/torty/">Торты</a></li>
-                    <li><a class="tabs-href" href="/catalog.html#bubbles">Медовые шарики</a></li>
-                    <li><a class="tabs-href" href="/catalog.html#slices">Медовые ломтики</a></li>
-                    <li><a class="tabs-href" href="/catalog.html#pastries">Пирожные</a></li>
+                    <li><a class="tabs-href" href="/catalog/medovye-shariki/">Медовые шарики</a></li>
+                    <li><a class="tabs-href" href="/catalog/medovye-lomtiki/">Медовые ломтики</a></li>
+                    <li><a class="tabs-href" href="/catalog/pirozhnye/">Пирожные</a></li>
                 </ul>
             </li>
-            <li class="desktop"><a href="/about.html">О нас</a></li>
-            <li class="desktop"><a href="/contacts.html">Контакты</a></li>
+            <li class="desktop"><a href="/about/">О нас</a></li>
+            <li class="desktop"><a href="/contacts/">Контакты</a></li>
 {*            <li>*}
 {*                <a><i class="mdi mdi-account"></i></a>*}
 {*                <ul>*}
@@ -47,10 +53,10 @@
     <li>
         <a class="root">Продукция</a>
         <ul>
-            <li><a class="tabs-href" href="/catalog.html#cakes">Торты</a></li>
-            <li><a class="tabs-href" href="/catalog.html#bubbles">Медовые шарики</a></li>
-            <li><a class="tabs-href" href="/catalog.html#slices">Медовые ломтики</a></li>
-            <li><a class="tabs-href" href="/catalog.html#pastries">Пирожные</a></li>
+            <li><a class="tabs-href" href="/catalog/torty/">Торты</a></li>
+            <li><a class="tabs-href" href="/catalog/medovye-shariki/">Медовые шарики</a></li>
+            <li><a class="tabs-href" href="/catalog/medovye-lomtiki/">Медовые ломтики</a></li>
+            <li><a class="tabs-href" href="/catalog/pirozhnye/">Пирожные</a></li>
         </ul>
     </li>
     <li><a class="root" href="">О нас</a></li>
@@ -78,17 +84,17 @@
             <div class="col l2 m3 s6 xs6">
                 <div class="footer-header">Каталог</div>
                 <ul>
-                    <li><a href="">Торты</a></li>
-                    <li><a href="">Медовые шарики</a></li>
-                    <li><a href="">Медовые ломтики</a></li>
-                    <li><a href="">Пирожные</a></li>
+                    <li><a href="/catalog/torty/">Торты</a></li>
+                    <li><a href="/catalog/medovye-shariki/">Медовые шарики</a></li>
+                    <li><a href="/catalog/medovye-lomtiki/">Медовые ломтики</a></li>
+                    <li><a href="/catalog/pirozhnye/">Пирожные</a></li>
                 </ul>
             </div>
             <div class="col l3 m3 s6 xs7">
                 <div class="footer-header">Контакты</div>
                 <ul>
                     <li><a href=""><i class="mdi mdi-map-marker"></i><span>с. Великовечное, ул. Мира, 87</span></a></li>
-                    <li><a href=""><i class="mdi mdi-phone"></i><span>+7 861 553 9014</span></a></li>
+                    <li><a href="tel:88615539014"><i class="mdi mdi-phone"></i><span>+7 861 553 9014</span></a></li>
                     <li><a href=""><i class="mdi mdi-phone transparent"></i><span>+7 989 285 8148</span></a></li>
                     <li><a href=""><i class="mdi mdi-email"></i><span>torti.esayan@mail.ru</span></a></li>
                 </ul>

@@ -62,9 +62,9 @@
                                     {/foreach}
                                 {else}
                                     <div class="price-block">
-                                        <div class="weight">{$offer['title']}г</div>
+                                        <div class="weight">{$product['one_weight']}г</div>
                                         <div class="separator"></div>
-                                        <div class="price"></div>
+                                        <div class="price">{$product->getCost()|replace:' ':''|intval/$product['count_in_box']|intval}₽</div>
                                     </div>
                                 {/if}
                             </div>

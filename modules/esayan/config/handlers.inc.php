@@ -137,6 +137,16 @@ class Handlers extends HandlerAbstract
                     'maxLength' => 1,
                     'checkboxView' => [1,0],
                     'default' => 0
+                ]),
+            t('Упаковка'),
+                'one_weight' => new Integer([
+                    'description' => t('Вес одной упаковки')
+                ]),
+                'count_in_box' => new Integer([
+                    'description' => t('Упаковок в коробке')
+                ]),
+                'count_in_pallet' => new Integer([
+                    'description' => t('Коробок в паллете')
                 ])
         ]);
     }
