@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <defaultValues>
+        <name multilanguage="true">Есаян</name>
+        <description multilanguage="true">Для сайта Торты-Есаян</description>
+        <version>4.0.0</version>
+        <author>2Br</author>
+    </defaultValues>
+</config>
